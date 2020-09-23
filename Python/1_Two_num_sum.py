@@ -14,8 +14,16 @@ target = 10
 
 
 def twoNumSum(array, targetSumNum):
-    # Logic
-    pass
+    # Psuedocode see TypeScript solution
+    # nums hash table
+    nums = {}
+    for num in array:
+        potentialMatch = targetSumNum - num
+        if potentialMatch in nums:
+            return [potentialMatch, num]
+        else:
+            nums[num] = True
+    return []
 
 
 twoNumSum(arrOfInt, target)

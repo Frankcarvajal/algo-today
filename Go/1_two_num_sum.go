@@ -19,6 +19,14 @@ func main() {
 
 // TwoNumSum Time & Space Complexity:
 func TwoNumSum(array []int, targetSumNum int) []int {
-	// Logic
-	return []
+	//  Psuedocode see TypeScript solution
+	nums := map[int]bool{}
+	for _, num := range array {
+		potentialMatch := targetSumNum - num
+		if _, found := nums[potentialMatch]; found {
+			return []int{potentialMatch, num}
+		}
+		nums[num] = true
+	}
+	return []int{}
 }
